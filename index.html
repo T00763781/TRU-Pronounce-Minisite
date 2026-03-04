@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-tool-url="https://YOUR-ORG.github.io/TRU-Name-Pronouncer/embed.html">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TRU — Name Inclusion (Minisite POC)</title>
+  <meta name="description" content="A minisite POC for TRU’s Name Inclusion Project: why names matter and tools to share/learn names respectfully." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <img class="tru-mark" src="assets/icons/tru-mark.svg" alt="TRU" />
+      <nav class="nav" aria-label="Page">
+        <a href="#why">Why names matter</a>
+        <a href="#tool">Pronunciation helper</a>
+        <a href="#videos">Videos</a>
+        <a href="#stories">Stories</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Your name matters</h1>
+          <p class="lede">
+            Saying a name the way someone prefers is a simple, powerful practice of respect and belonging.
+            This minisite is a POC for TRU’s Name Inclusion Project.
+          </p>
+        </div>
+        <div class="hero-card" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="section" id="why" aria-labelledby="why-title">
+      <h2 id="why-title">Why names matter</h2>
+      <p class="sub">
+        [Placeholder content] Brief framing from EDI and Intercultural Learning on how names connect to identity, belonging, and classroom/community practices.
+      </p>
+
+      <div class="grid-2" style="margin-top:14px">
+        <div class="card">
+          <h3>Learning names</h3>
+          <p>[Placeholder content] Ask, repeat back, confirm, and invite correction without making it a burden.</p>
+        </div>
+        <div class="card">
+          <h3>Sharing your name</h3>
+          <p>[Placeholder content] Offer a phonetic breakdown, a cue (rhymes with/like), and where you place emphasis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tool" aria-labelledby="tool-title">
+      <h2 id="tool-title">Pronunciation helper</h2>
+      <p class="sub">
+        Use the helper as a <strong>starting point</strong>. Adjust it to match preference. When in doubt, ask the person — they’re the source of truth.
+      </p>
+
+      <div class="tool-grid" style="margin-top:14px">
+        <div class="embed-card">
+          <iframe
+            id="toolFrame"
+            class="embed"
+            src=""
+            title="Name pronunciation helper"
+            loading="lazy"
+            allow="clipboard-write"
+          ></iframe>
+          <div class="fallback">
+            Trouble loading the helper? <a data-tool-link href="#" target="_blank" rel="noopener">Open it in a new tab</a>.
+          </div>
+        </div>
+
+        <aside class="aside" aria-label="Guidance">
+          <div class="aside-box">
+            <h3>How to learn a name</h3>
+            <ol>
+              <li>Ask: “Could you help me pronounce your name the way you prefer?”</li>
+              <li>Repeat it back and confirm.</li>
+              <li>Write a quick note (phonetic + cue).</li>
+              <li>If you miss it: brief apology, correct, continue.</li>
+            </ol>
+          </div>
+          <div class="aside-box">
+            <h3>How to teach your name</h3>
+            <ol>
+              <li>Say it slowly, then at normal speed.</li>
+              <li>Share a syllable breakdown.</li>
+              <li>Add a cue (“rhymes with…”, “like…”).</li>
+              <li>Invite correction.</li>
+            </ol>
+          </div>
+          <div class="aside-box">
+            <h3>Privacy</h3>
+            <p>Runs in your browser — nothing is uploaded.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="videos" aria-labelledby="videos-title">
+      <h2 id="videos-title">Two short “how-to” videos</h2>
+      <p class="sub">
+        Leave room for two horizontal videos (16:9). Replace the placeholder files in <code>/assets/videos</code> when videos are ready.
+      </p>
+
+      <div class="video-grid" style="margin-top:14px">
+        <div class="video-card">
+          <h3>How to learn a name</h3>
+          <video class="video" controls preload="none" poster="assets/posters/how-to-learn-a-name.svg">
+            <source src="assets/videos/how-to-learn-a-name.mp4" type="video/mp4" />
+          </video>
+          <p class="caption">[Placeholder caption] A short, practical script for asking and confirming respectfully.</p>
+        </div>
+
+        <div class="video-card">
+          <h3>How to teach your name</h3>
+          <video class="video" controls preload="none" poster="assets/posters/how-to-teach-your-name.svg">
+            <source src="assets/videos/how-to-teach-your-name.mp4" type="video/mp4" />
+          </video>
+          <p class="caption">[Placeholder caption] A quick template for sharing syllables + cues + emphasis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stories" aria-labelledby="stories-title">
+      <div class="carousel-shell">
+        <div class="carousel-head">
+          <div>
+            <h2 id="stories-title" style="margin:0 0 6px">Stories: why names matter</h2>
+            <p>[Placeholder] 5 short videos from students and staff sharing why names matter.</p>
+          </div>
+          <div class="carousel-actions">
+            <button id="prevBtn" class="cbtn ghost" type="button" aria-label="Previous videos">←</button>
+            <button id="nextBtn" class="cbtn" type="button" aria-label="Next videos">→</button>
+          </div>
+        </div>
+
+        <div id="carousel" class="carousel" aria-label="Video carousel">
+          <article class="slide">
+            <h4>Student story 1</h4>
+            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-01.svg">
+              <source src="assets/videos/why-names-matter-01.mp4" type="video/mp4" />
+            </video>
+            <div class="meta">[Placeholder] “My name is…” (20–40s)</div>
+          </article>
+
+          <article class="slide">
+            <h4>Student story 2</h4>
+            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-02.svg">
+              <source src="assets/videos/why-names-matter-02.mp4" type="video/mp4" />
+            </video>
+            <div class="meta">[Placeholder] “When people say it right…”</div>
+          </article>
+
+          <article class="slide">
+            <h4>Staff story 3</h4>
+            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-03.svg">
+              <source src="assets/videos/why-names-matter-03.mp4" type="video/mp4" />
+            </video>
+            <div class="meta">[Placeholder] “In the classroom…”</div>
+          </article>
+
+          <article class="slide">
+            <h4>Staff story 4</h4>
+            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-04.svg">
+              <source src="assets/videos/why-names-matter-04.mp4" type="video/mp4" />
+            </video>
+            <div class="meta">[Placeholder] “Belonging starts with…”</div>
+          </article>
+
+          <article class="slide">
+            <h4>Student story 5</h4>
+            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-05.svg">
+              <source src="assets/videos/why-names-matter-05.mp4" type="video/mp4" />
+            </video>
+            <div class="meta">[Placeholder] “Here’s how to ask me…”</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">FAQ</h2>
+      <div class="qa" style="margin-top:12px">
+        <div class="q">Why not just guess?</div>
+        <div class="a">Because names are personal. Use tools as starting points, then ask and confirm.</div>
+      </div>
+      <div class="qa" style="margin-top:12px">
+        <div class="q">Does this tool store my name?</div>
+        <div class="a">No — this POC runs in the browser. Nothing is uploaded.</div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cms-title">
+      <h2 id="cms-title">ACM CMS notes (for tru.ca)</h2>
+      <div class="card">
+        <p style="margin:0;color:rgba(11,47,63,.84)">
+          Preferred approach: embed the tool with an iframe. If ACM strips iframes, use a button linking out to the tool page.
+        </p>
+        <p style="margin:10px 0 0;color:rgba(11,47,63,.84)">
+          Update the tool URL by changing <code>data-tool-url</code> on the <code>&lt;html&gt;</code> tag (top of this file).
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container">
+      <p>TRU Name Inclusion Project (POC) • Built for respect and belonging.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
