@@ -56,7 +56,7 @@
   <section class="hero">
     <div class="wrap hero-inner">
       <h1>Diversity and Equity</h1>
-      <p class="hero-sub">GitHub mock: preview of adding <strong>Name inclusion</strong> as a third tab panel (#tab-content-3).</p>
+      <p class="hero-sub">GitHub mock: preview of adding <strong>Name inclusion</strong> as a third tab panel (<code>#tab-content-3</code>).</p>
     </div>
   </section>
 
@@ -87,203 +87,159 @@
       </section>
 
       <section class="panel" role="tabpanel" id="tab-content-3" aria-labelledby="tab-3" hidden>
-        <!-- TRU Name Inclusion Project — Tab panel content (for #tab-content-3)
-     Paste this inside the NEW tab panel container on:
-     https://www.tru.ca/student-development/diversity-and-equity.html
-     (TRU team can duplicate an existing panel, set id="tab-content-3", then paste this.)
-
-     Notes:
-     - No external JS required (CMS-safe).
-     - Uses <details>/<summary> accordions to match the expandable + lists used on the page.
-     - Replace banner image URL after uploading to TRU media library.
-     - Replace video placeholders with TRU-hosted embed codes or MP4 URLs.
--->
-
-<style>
-/* Scoped styles only — avoids fighting tru.ca */
-.tru-ni{--ni-teal:#00aeb5;--ni-navy:#003e51;--ni-ink:#0b2f3f;--ni-muted:rgba(11,47,63,.75);--ni-border:rgba(0,0,0,.14);}
-.tru-ni *{box-sizing:border-box}
-.tru-ni{color:var(--ni-ink)}
-.tru-ni .ni-wrap{max-width:980px;margin:0 auto;padding:8px 0 18px}
-.tru-ni .ni-banner{position:relative;border-radius:10px;overflow:hidden;background:#0b2f3f}
-.tru-ni .ni-banner img{width:100%;height:260px;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.05)}
-.tru-ni .ni-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,62,81,.88) 0%,rgba(0,62,81,.50) 55%,rgba(0,62,81,.15) 100%)}
-.tru-ni .ni-hero{position:absolute;inset:0;display:flex;align-items:center;padding:18px}
-.tru-ni .ni-hero-card{position:relative;z-index:2;max-width:760px;color:#fff}
-.tru-ni .ni-hero-card h2{margin:0;font-size:34px;line-height:1.1;font-weight:800;letter-spacing:.2px}
-.tru-ni .ni-hero-card p{margin:10px 0 0;font-size:15px;color:rgba(255,255,255,.92);max-width:72ch}
-.tru-ni .ni-pillrow{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-.tru-ni .ni-pill{display:inline-block;border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.94);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;background:rgba(0,0,0,.08)}
-.tru-ni .ni-section{margin-top:18px}
-.tru-ni .ni-section h3{margin:0 0 8px;font-size:22px;font-weight:800}
-.tru-ni .ni-lead{margin:0;color:var(--ni-muted);max-width:92ch}
-.tru-ni .ni-grid{margin-top:14px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:start}
-.tru-ni .ni-card{border:1px solid var(--ni-border);border-radius:10px;background:#fff;padding:14px}
-.tru-ni .ni-card h4{margin:0 0 8px;font-size:16px;font-weight:800}
-.tru-ni .ni-embed{width:100%;border:0;border-radius:10px;height:860px;background:#fff}
-.tru-ni .ni-aside{display:grid;gap:10px}
-.tru-ni .ni-asidebox{background:var(--ni-navy);color:rgba(255,255,255,.92);border-radius:10px;padding:12px}
-.tru-ni .ni-asidebox h4{margin:0 0 8px;font-size:14px;font-weight:800;color:#fff}
-.tru-ni .ni-asidebox ol{margin:0;padding-left:18px;font-size:13px;color:rgba(255,255,255,.90)}
-.tru-ni .ni-asidebox p{margin:0;font-size:13px;color:rgba(255,255,255,.88)}
-
-.tru-ni details{border-top:1px solid rgba(0,0,0,.18);padding:10px 0}
-.tru-ni details:first-of-type{border-top:0}
-.tru-ni summary{cursor:pointer;font-weight:800;list-style:none;display:flex;align-items:center;gap:10px}
-.tru-ni summary::-webkit-details-marker{display:none}
-.tru-ni .ni-plus{width:18px;height:18px;border:1px solid rgba(0,0,0,.20);border-radius:4px;display:grid;place-items:center;font-weight:900;color:rgba(11,47,63,.70)}
-.tru-ni details[open] .ni-plus{background:rgba(0,174,181,.12);border-color:rgba(0,174,181,.30);color:rgba(0,62,81,.92)}
-.tru-ni .ni-body{margin-top:10px}
-.tru-ni .ni-body p{margin:10px 0 0;line-height:1.55}
-.tru-ni .ni-body p:first-child{margin-top:0}
-.tru-ni .ni-body ul,.tru-ni .ni-body ol{margin:10px 0 0;padding-left:20px}
-.tru-ni .ni-body li{margin:6px 0}
-.tru-ni .ni-body code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;background:rgba(0,174,181,.08);border:1px solid rgba(0,0,0,.10);padding:.1em .35em;border-radius:6px}
-
-.tru-ni .ni-video-grid{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.tru-ni .ni-video{width:100%;aspect-ratio:16/9;border-radius:10px;background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.12);display:grid;place-items:center;color:rgba(11,47,63,.70);font-weight:700}
-.tru-ni .ni-carousel{margin-top:12px;display:flex;gap:12px;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
-.tru-ni .ni-slide{min-width:min(340px,88vw);scroll-snap-align:start;border:1px solid rgba(0,0,0,.14);border-radius:10px;padding:12px;background:#fff}
-.tru-ni .ni-slide h5{margin:0 0 8px;font-size:14px;font-weight:800}
-.tru-ni .ni-small{margin-top:8px;font-size:13px;color:rgba(11,47,63,.74)}
-@media (max-width:980px){
-  .tru-ni .ni-grid{grid-template-columns:1fr}
-  .tru-ni .ni-video-grid{grid-template-columns:1fr}
-  .tru-ni .ni-banner img{height:220px}
-}
-</style>
-
-<section class="tru-ni" aria-label="Name Inclusion">
-  <div class="ni-wrap">
-
-    <div class="ni-banner">
-      <!-- Replace the src with a TRU media URL once uploaded in ACM CMS -->
-      <img src="assets/51602362562_90934ba714_o.jpg" alt="TRU campus photo banner" />
-      <div class="ni-hero">
-        <div class="ni-hero-card">
-          <h2>Name inclusion</h2>
-          <p>Learning and using someone’s name the way they prefer is a practical, everyday way to show respect. This tab includes guidance plus a pronunciation helper you can use as a starting point.</p>
-          <div class="ni-pillrow">
-            <span class="ni-pill">Curiosity over guessing</span>
-            <span class="ni-pill">Practice over performance</span>
-            <span class="ni-pill">Consent over convenience</span>
-            <span class="ni-pill">Repair over embarrassment</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ni-section">
-      <h3>Pronunciation helper</h3>
-      <p class="ni-lead"><strong>Starting point only:</strong> adjust to match the person’s preference. When in doubt, ask the person — they’re the source of truth.</p>
-
-      <div class="ni-grid">
-        <div class="ni-card">
-          <iframe class="ni-embed"
-            src="https://t00763781.github.io/TRU-Name-Pronouncer/embed.html"
-            title="Name pronunciation helper"
-            loading="lazy"
-            allow="clipboard-write"></iframe>
-          <p class="ni-small">Trouble loading? <a href="https://t00763781.github.io/TRU-Name-Pronouncer/" target="_blank" rel="noopener">Open the helper in a new tab</a>.</p>
-        </div>
-
-        <aside class="ni-aside" aria-label="Guidance">
-          <div class="ni-asidebox">
-            <h4>How to learn a name</h4>
-            <ol>
-              <li>Ask: “Could you help me pronounce your name the way you prefer?”</li>
-              <li>Repeat it back and confirm.</li>
-              <li>Write a quick note (phonetic + cue).</li>
-              <li>If you miss it: brief apology, correct, continue.</li>
-            </ol>
+        <section class="ni" aria-label="Name inclusion">
+          <!-- 1) Banner -->
+          <div class="ni-banner">
+            <img src="assets/51602362562_90934ba714_o.jpg" alt="TRU campus banner image" />
+            <div class="ni-hero">
+              <div class="ni-hero-card">
+                <h2>Name inclusion</h2>
+                <p>At TRU, names are how we find each other — in class lists, at service counters, in email threads, and in the small moments where belonging is built. This page offers practical ways to learn and share names with care.</p>
+                <div class="ni-pillrow">
+                  <span class="ni-pill">Curiosity over guessing</span>
+                  <span class="ni-pill">Practice over performance</span>
+                  <span class="ni-pill">Consent over convenience</span>
+                  <span class="ni-pill">Repair over embarrassment</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="ni-asidebox">
-            <h4>How to teach your name</h4>
-            <ol>
-              <li>Say it slowly, then at normal speed.</li>
-              <li>Share a syllable breakdown.</li>
-              <li>Add a cue (“rhymes with…”, “like…”).</li>
-              <li>Invite correction.</li>
-            </ol>
+          <!-- 2) Your name matters -->
+          <div class="ni-section">
+            <h3>Your name matters</h3>
+            <p class="ni-kicker" data-ni-text="HERO_HEADING"></p>
+            <div class="ni-md" data-ni-md="HERO_BODY"></div>
           </div>
 
-          <div class="ni-asidebox">
-            <h4>Privacy</h4>
-            <p>Runs in your browser — nothing is uploaded.</p>
+          <!-- 3) Carousel (Why my name matters) -->
+          <div class="ni-section">
+            <h3>Why my name matters</h3>
+            <p class="ni-lead">A carousel of five short student and staff stories (placeholders for now).</p>
+            <div class="ni-carousel" aria-label="Why my name matters carousel">
+              
+              <div class="ni-slide">
+                <h4>Story 1</h4>
+                <div class="ni-video">Video placeholder</div>
+                <div class="ni-small">Replace with an embed or MP4 URL.</div>
+              </div>
+              <div class="ni-slide">
+                <h4>Story 2</h4>
+                <div class="ni-video">Video placeholder</div>
+                <div class="ni-small">Replace with an embed or MP4 URL.</div>
+              </div>
+              <div class="ni-slide">
+                <h4>Story 3</h4>
+                <div class="ni-video">Video placeholder</div>
+                <div class="ni-small">Replace with an embed or MP4 URL.</div>
+              </div>
+              <div class="ni-slide">
+                <h4>Story 4</h4>
+                <div class="ni-video">Video placeholder</div>
+                <div class="ni-small">Replace with an embed or MP4 URL.</div>
+              </div>
+              <div class="ni-slide">
+                <h4>Story 5</h4>
+                <div class="ni-video">Video placeholder</div>
+                <div class="ni-small">Replace with an embed or MP4 URL.</div>
+              </div>
+            </div>
           </div>
-        </aside>
-      </div>
-    </div>
 
-    <div class="ni-section" aria-label="Guidance and resources">
+          <!-- 4) Learning and sharing names -->
+          <div class="ni-section">
+            <h3>Learning and sharing names</h3>
+            <p class="ni-lead">Two perspectives: how to learn a name, and how to share your name.</p>
+            <div class="ni-two">
+              <div class="ni-card">
+                <h4 data-ni-text="LEARNING_HEADING">Learning names</h4>
+                <div class="ni-md" data-ni-md="LEARNING_BODY"></div>
+              </div>
+              <div class="ni-card">
+                <h4 data-ni-text="SHARING_HEADING">Sharing your name</h4>
+                <div class="ni-md" data-ni-md="SHARING_BODY"></div>
+              </div>
+            </div>
+          </div>
 
-      <details open>
-        <summary><span class="ni-plus">+</span> HERO</summary>
-        <div class="ni-body"><p>(Add HERO copy here.)</p></div>
-      </details>
+          <!-- 5) Share your name tool -->
+          <div class="ni-section">
+            <h3>Share your name tool</h3>
+            <p class="ni-lead"><strong>Starting point only:</strong> adjust to match the person’s preference. When in doubt, ask the person — they’re the source of truth.</p>
 
-      <details>
-        <summary><span class="ni-plus">+</span> WHY NAMES MATTER</summary>
-        <div class="ni-body"><p>(Add WHY NAMES MATTER copy here.)</p></div>
-      </details>
+            <div class="ni-tool-grid">
+              <div class="ni-card">
+                <iframe class="ni-embed"
+                  src="https://t00763781.github.io/TRU-Name-Pronouncer/embed.html"
+                  title="Name pronunciation helper"
+                  loading="lazy"
+                  allow="clipboard-write"></iframe>
+                <div class="ni-small">Trouble loading? <a href="https://t00763781.github.io/TRU-Name-Pronouncer/" target="_blank" rel="noopener">Open the tool in a new tab</a>.</div>
+              </div>
 
-      <details>
-        <summary><span class="ni-plus">+</span> LEARNING NAMES</summary>
-        <div class="ni-body"><p>(Add LEARNING NAMES copy here.)</p></div>
-      </details>
+              <aside class="ni-aside" aria-label="Guidance">
+                <div class="ni-asidebox">
+                  <h4>How to learn a name</h4>
+                  <ol>
+                    <li>Ask: “Could you help me pronounce your name the way you prefer?”</li>
+                    <li>Repeat it back and confirm.</li>
+                    <li>Write a quick note (phonetic + cue).</li>
+                    <li>If you miss it: brief apology, correct, continue.</li>
+                  </ol>
+                </div>
 
-      <details>
-        <summary><span class="ni-plus">+</span> SHARING YOUR NAME</summary>
-        <div class="ni-body"><p>(Add SHARING YOUR NAME copy here.)</p></div>
-      </details>
+                <div class="ni-asidebox">
+                  <h4>How to teach your name</h4>
+                  <ol>
+                    <li>Say it slowly, then at normal speed.</li>
+                    <li>Share a syllable breakdown.</li>
+                    <li>Add a cue (“rhymes with…”, “like…”).</li>
+                    <li>Invite correction.</li>
+                  </ol>
+                </div>
 
-      <details>
-        <summary><span class="ni-plus">+</span> BARRIERS AND BRIDGES</summary>
-        <div class="ni-body"><p>(Add BARRIERS AND BRIDGES copy here.)</p></div>
-      </details>
+                <div class="ni-asidebox">
+                  <h4>Privacy</h4>
+                  <p>Runs in your browser — nothing is uploaded.</p>
+                </div>
+              </aside>
+            </div>
+          </div>
 
-    </div>
+          <!-- 6) Side-by-side how-to videos -->
+          <div class="ni-section">
+            <h3>How-to videos</h3>
+            <p class="ni-lead">Two horizontal videos (16:9). Replace placeholders with TRU-hosted embeds or MP4 URLs.</p>
+            <div class="ni-video-grid">
+              <div class="ni-card">
+                <h4>How to learn a name</h4>
+                <div class="ni-video">Video placeholder (16:9)</div>
+                <div class="ni-small">Replace with an embed or MP4 URL.</div>
+              </div>
+              <div class="ni-card">
+                <h4>How to teach your name</h4>
+                <div class="ni-video">Video placeholder (16:9)</div>
+                <div class="ni-small">Replace with an embed or MP4 URL.</div>
+              </div>
+            </div>
+          </div>
 
-    <div class="ni-section" aria-label="Videos">
-      <h3>Videos</h3>
-      <p class="ni-lead">Space for two horizontal videos (how to learn a name, how to teach your name), and a carousel of five short stories. Replace placeholders with TRU-hosted video embeds or MP4 URLs.</p>
+          <!-- 7) Barriers and bridges -->
+          <div class="ni-section">
+            <h3 data-ni-text="BARRIERS_HEADING">Barriers and bridges</h3>
+            <div class="ni-md" data-ni-md="BARRIERS_BODY"></div>
+          </div>
 
-      <div class="ni-video-grid">
-        <div class="ni-card">
-          <h4>How to learn a name</h4>
-          <div class="ni-video">Video placeholder (16:9)</div>
-          <p class="ni-small"><strong>Replace:</strong> paste a TRU-approved embed code or MP4 URL.</p>
-        </div>
-
-        <div class="ni-card">
-          <h4>How to teach your name</h4>
-          <div class="ni-video">Video placeholder (16:9)</div>
-          <p class="ni-small"><strong>Replace:</strong> paste a TRU-approved embed code or MP4 URL.</p>
-        </div>
-      </div>
-
-      <div class="ni-section">
-        <h3>Stories: why names matter</h3>
-        <p class="ni-lead">Carousel of five short student/staff videos.</p>
-
-        <div class="ni-carousel" aria-label="Stories carousel">
-          <div class="ni-slide"><h5>Story 1</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div><div class="ni-slide"><h5>Story 2</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div><div class="ni-slide"><h5>Story 3</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div><div class="ni-slide"><h5>Story 4</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div><div class="ni-slide"><h5>Story 5</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+        </section>
       </section>
     </div>
 
     <footer class="foot">
-      <p><strong>Tip:</strong> open <code>#tab-content-3</code> to deep-link to this tab.</p>
+      <p><strong>Tip:</strong> open <code>#tab-content-3</code> to deep-link directly to the Name inclusion tab.</p>
     </footer>
   </main>
 
   <script src="tabs.js"></script>
+  <script src="ni.js"></script>
 </body>
 </html>
