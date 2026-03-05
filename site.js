@@ -1,9 +1,4 @@
-// TRU minisite JS (no frameworks)
-// - inject tool URL
-// - carousel controls
-// - load content.md and inject text blocks into the page
-
-const TOOL_URL_DEFAULT = "https://YOUR-ORG.github.io/TRU-Name-Pronouncer/embed.html";
+const TOOL_URL_DEFAULT = "https://t00763781.github.io/TRU-Name-Pronouncer/embed.html";
 const CONTENT_MD_DEFAULT = "content.md";
 
 function $(id){ return document.getElementById(id); }
@@ -17,9 +12,6 @@ function escapeHtml(s){
     .replaceAll("'","&#39;");
 }
 
-// A small, safe markdown renderer (subset) for our content.md.
-// - Escapes HTML first (so content can't inject scripts)
-// - Supports headings, paragraphs, bold, italics, inline code, ul/ol, hr
 function renderMarkdownLite(md){
   const src = escapeHtml(md).replace(/\r\n/g, "\n");
   const lines = src.split("\n");
@@ -29,44 +21,38 @@ function renderMarkdownLite(md){
   let inUl = false;
   let inOl = false;
 
-  function flushPara(){
+  const inline = (s) => {
+    s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    return s;
+  };
+
+  const flushPara = () => {
     if (!para.length) return;
     const text = para.join(" ").trim();
     if (text) out.push(`<p>${inline(text)}</p>`);
     para = [];
-  }
-  function closeLists(){
+  };
+
+  const closeLists = () => {
     if (inUl){ out.push("</ul>"); inUl = false; }
     if (inOl){ out.push("</ol>"); inOl = false; }
-  }
-
-  function inline(s){
-    // inline code
-    s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
-    // bold
-    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-    // italics (simple)
-    s = s.replace(/\*([^*]+)\*/g, "<em>$1</em>");
-    return s;
-  }
+  };
 
   for (let raw of lines){
     const line = raw.trimEnd();
 
-    // block separators
     if (/^---+$/.test(line.trim())){
       flushPara(); closeLists();
       out.push("<hr />");
       continue;
     }
-
-    // blank line
     if (!line.trim()){
       flushPara(); closeLists();
       continue;
     }
 
-    // headings
     const h3 = line.match(/^###\s+(.*)$/);
     const h2 = line.match(/^##\s+(.*)$/);
     const h1 = line.match(/^#\s+(.*)$/);
@@ -79,7 +65,6 @@ function renderMarkdownLite(md){
       continue;
     }
 
-    // ordered list
     const ol = line.match(/^\s*(\d+)\.\s+(.*)$/);
     if (ol){
       flushPara();
@@ -89,8 +74,7 @@ function renderMarkdownLite(md){
       continue;
     }
 
-    // unordered list
-    const ul = line.match(/^\s*[*-]\s+(.*)$/);
+    const ul = line.match(/^\s*(?:[*-]|•)\s+(.*)$/);
     if (ul){
       flushPara();
       if (inOl){ out.push("</ol>"); inOl = false; }
@@ -99,7 +83,6 @@ function renderMarkdownLite(md){
       continue;
     }
 
-    // default: paragraph accumulation
     para.push(line.trim());
   }
 
@@ -107,48 +90,30 @@ function renderMarkdownLite(md){
   return out.join("\n");
 }
 
-function parseBlocks(mdText){
+function parseKeyBlocks(mdText){
+  const lines = (mdText ?? "").replace(/\r\n/g, "\n").split("\n");
+  const isKey = (s) => /^[A-Z][A-Z0-9_]{2,}$/.test(s.trim());
   const blocks = {};
-  const re = /<!--BLOCK:([A-Z0-9_]+)-->([\s\S]*?)<!--\/BLOCK:\1-->/g;
-  let m;
-  while ((m = re.exec(mdText)) !== null){
-    blocks[m[1]] = (m[2] || "").trim();
+  let key = null;
+  let buf = [];
+
+  const flush = () => {
+    if (!key) return;
+    blocks[key] = buf.join("\n").trim();
+    buf = [];
+  };
+
+  for (const ln of lines){
+    const t = ln.trim();
+    if (isKey(t)){
+      flush();
+      key = t;
+      continue;
+    }
+    if (key) buf.push(ln);
   }
+  flush();
   return blocks;
-}
-
-function stripMarkdownToText(md){
-  // For headings stored as plain text, this is usually a no-op.
-  return (md ?? "").toString()
-    .replace(/\*\*/g, "")
-    .replace(/\*/g, "")
-    .replace(/`/g, "")
-    .trim();
-}
-
-async function initContent(){
-  const url = document.documentElement.getAttribute("data-content-md") || CONTENT_MD_DEFAULT;
-  try{
-    const res = await fetch(url, { cache: "no-cache" });
-    if (!res.ok) throw new Error("content fetch failed");
-    const md = await res.text();
-    const blocks = parseBlocks(md);
-
-    const nodes = document.querySelectorAll("[data-md]");
-    nodes.forEach(el => {
-      const key = el.getAttribute("data-md");
-      const mode = el.getAttribute("data-md-mode") || "md";
-      const block = blocks[key] || "";
-      if (mode === "text"){
-        el.textContent = stripMarkdownToText(block);
-      } else {
-        el.innerHTML = renderMarkdownLite(block);
-      }
-    });
-  } catch (e){
-    // If content.md fails to load, page still works; keep built-in fallback text.
-    console.warn("Could not load content.md:", e);
-  }
 }
 
 function initToolEmbed(){
@@ -156,8 +121,9 @@ function initToolEmbed(){
   if (!iframe) return;
   const url = document.documentElement.getAttribute("data-tool-url") || TOOL_URL_DEFAULT;
   iframe.src = url;
-  const links = document.querySelectorAll("[data-tool-link]");
-  links.forEach(a => a.setAttribute("href", url.replace(/\/embed\.html$/,"/")));
+  document.querySelectorAll("[data-tool-link]").forEach(a => {
+    a.setAttribute("href", url.replace(/\/embed\.html$/,"/"));
+  });
 }
 
 function initCarousel(){
@@ -166,25 +132,68 @@ function initCarousel(){
   const prev = $("prevBtn");
   const next = $("nextBtn");
 
-  function scrollByCard(dir){
+  const scrollByCard = (dir) => {
     const card = el.querySelector(".slide");
     const w = card ? card.getBoundingClientRect().width : 360;
     el.scrollBy({ left: dir * (w + 12), behavior: "smooth" });
-  }
+  };
 
   prev?.addEventListener("click", () => scrollByCard(-1));
   next?.addEventListener("click", () => scrollByCard(1));
 
-  function update(){
+  const update = () => {
     const max = el.scrollWidth - el.clientWidth - 1;
     if (prev) prev.disabled = el.scrollLeft <= 2;
     if (next) next.disabled = el.scrollLeft >= max;
-  }
+  };
   el.addEventListener("scroll", () => window.requestAnimationFrame(update));
   update();
 }
 
-// Init
+function showDiagnostics(msg){
+  const id = "diag";
+  let d = document.getElementById(id);
+  if (!d){
+    d = document.createElement("div");
+    d.id = id;
+    d.style.cssText = "position:fixed;right:12px;bottom:12px;max-width:440px;background:rgba(11,59,73,.96);color:#fff;padding:10px 12px;border-radius:12px;font:12px/1.35 Arial;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:9999";
+    document.body.appendChild(d);
+  }
+  d.textContent = msg;
+}
+
+async function initContent(){
+  const url = document.documentElement.getAttribute("data-content-md") || CONTENT_MD_DEFAULT;
+  try{
+    const res = await fetch(url, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`Fetch failed (${res.status}) for ${url}`);
+    const md = await res.text();
+    const blocks = parseKeyBlocks(md);
+
+    const nodes = document.querySelectorAll("[data-md]");
+    const missing = [];
+    nodes.forEach(el => {
+      const key = el.getAttribute("data-md");
+      const mode = el.getAttribute("data-md-mode") || "md";
+      const block = blocks[key] ?? "";
+      if (!block) missing.push(key);
+
+      if (mode === "text"){
+        if (block.trim()) el.textContent = block.trim();
+      } else {
+        if (block.trim()) el.innerHTML = renderMarkdownLite(block);
+      }
+    });
+
+    if (missing.length){
+      showDiagnostics("Content loaded, but missing keys: " + missing.join(", "));
+    }
+  } catch (e){
+    showDiagnostics("Could not load content.md. " + (e?.message || e));
+    console.warn(e);
+  }
+}
+
 initToolEmbed();
 initCarousel();
 initContent();
