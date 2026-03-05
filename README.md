@@ -1,37 +1,24 @@
-# TRU Diversity & Equity — Tab Mock (GitHub Pages) v2
+# TRU Diversity & Equity — Tab Mock (GitHub Pages) v3
 
-This repo is a GitHub-hosted preview that simulates the TRU Diversity & Equity tab UI and includes the
-**Name inclusion** content as **tab-content-3**.
+Implements your requested block sequence and updated copy.
 
 ## Block sequence (tab-content-3)
-1) Banner (Name inclusion)
+1) Banner
 2) Your name matters
-3) Carousel (Why my name matters)
-4) Learning and sharing names
-5) Share your name tool
-6) Side-by-side how-to videos
-7) Barriers and bridges
+3) Why my name matters (vertical carousel)
+4) Learning and sharing names (scripts + facilitation)
+5) How-to videos
+6) Share your name tool
+7) Barriers and bridges (12 items with bridges + scripts)
+
+## Edit copy
+Edit `content.md` (key format). The page loads it automatically via `ni.js`.
+
+## Media placeholders
+- Vertical story clips: `assets/videos/why-my-name-matters-01.mp4` … `05.mp4`
+- How-to clips: `assets/videos/how-to-learn-a-name.mp4`, `assets/videos/how-to-teach-your-name.mp4`
+- Posters: `assets/posters/*.svg`
 
 ## Deploy
-1) Push this folder to GitHub as a repo
-2) GitHub → Settings → Pages → Deploy from branch → `main` / `/ (root)`
-3) Open:
-- `/` (defaults to tab-content-1)
-- `/#tab-content-3` (opens Name inclusion)
-
-## Content editing
-Edit `content.md` in the repo root (key format):
-- HERO_HEADING / HERO_BODY
-- LEARNING_HEADING / LEARNING_BODY
-- SHARING_HEADING / SHARING_BODY
-- BARRIERS_HEADING / BARRIERS_BODY
-
-No external libraries are used; `ni.js` parses and renders markdown-lite.
-
-## Files
-- `index.html` — chrome + tabs + tab panels + Name inclusion layout
-- `styles.css` — minimal tru.ca-like styling + Name inclusion styles
-- `tabs.js` — accessible tab switching + hash deep links
-- `ni.js` — loads and injects content.md blocks
-- `content.md` — editable copy blocks
-- `assets/` — banner images
+Push to GitHub, then GitHub → Settings → Pages → Deploy from branch (`main` / root).
+Open: `/#tab-content-3`

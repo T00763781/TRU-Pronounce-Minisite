@@ -291,3 +291,13 @@ details[open] .plus{background:rgba(0,174,181,.12); border-color:rgba(0,174,181,
   .ni .ni-video-grid{ grid-template-columns: 1fr; }
   .ni .ni-banner img{ height: 220px; }
 }
+
+/* Video elements (placeholders now, real videos later) */
+.ni video.ni-video{
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(0,0,0,.06);
+}
+.ni video.ni-video-wide{ aspect-ratio: 16/9; }
+.ni video.ni-video-vert{ aspect-ratio: 9/16; }
