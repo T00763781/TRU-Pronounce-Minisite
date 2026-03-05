@@ -101,3 +101,49 @@ a:hover{text-decoration:underline}
   .hero-grid, .grid-2, .tool-grid, .video-grid{grid-template-columns:1fr}
   .embed{height:920px}
 }
+
+/* ────────────────────────────────────────────────────────────────────────
+   Markdown content styling (content.md → injected HTML)
+   Keep this conservative: readable defaults, no surprises.
+──────────────────────────────────────────────────────────────────────── */
+.md{
+  color: rgba(11,47,63,.86);
+  max-width: 95ch;
+}
+.md p{
+  margin: 10px 0 0;
+  line-height: 1.55;
+}
+.md p:first-child{ margin-top: 0; }
+
+.md h3{
+  margin: 18px 0 8px;
+  font-size: 18px;
+  font-weight: 900;
+  color: rgba(11,47,63,.92);
+}
+
+.md ul, .md ol{
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+.md li{
+  margin: 6px 0;
+}
+
+.md hr{
+  border: 0;
+  border-top: 1px solid rgba(0,62,81,.14);
+  margin: 18px 0;
+}
+
+.md strong{ font-weight: 900; }
+
+.md code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+  padding: 0.12em 0.35em;
+  border-radius: 8px;
+  background: rgba(0,176,185,.08);
+  border: 1px solid rgba(0,62,81,.10);
+}

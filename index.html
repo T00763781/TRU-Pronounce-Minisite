@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-tool-url="https://YOUR-ORG.github.io/TRU-Name-Pronouncer/embed.html">
+<html lang="en" data-tool-url="https://YOUR-ORG.github.io/TRU-Name-Pronouncer/embed.html" data-content-md="content.md">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -19,6 +19,9 @@
       <nav class="nav" aria-label="Page">
         <a href="#why">Why names matter</a>
         <a href="#tool">Pronunciation helper</a>
+        <a href="#learning">Learning names</a>
+        <a href="#sharing">Sharing your name</a>
+        <a href="#barriers">Barriers and bridges</a>
         <a href="#videos">Videos</a>
         <a href="#stories">Stories</a>
         <a href="#faq">FAQ</a>
@@ -30,32 +33,16 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <h1>Your name matters</h1>
-          <p class="lede">
-            Saying a name the way someone prefers is a simple, powerful practice of respect and belonging.
-            This minisite is a POC for TRU’s Name Inclusion Project.
-          </p>
+          <h1 id="heroHeadline" data-md="HERO_HEADING" data-md-mode="text">Your name matters</h1>
+          <div id="heroBody" class="md" data-md="HERO_BODY"></div>
         </div>
         <div class="hero-card" aria-hidden="true"></div>
       </div>
     </section>
 
     <section class="section" id="why" aria-labelledby="why-title">
-      <h2 id="why-title">Why names matter</h2>
-      <p class="sub">
-        [Placeholder content] Brief framing from EDI and Intercultural Learning on how names connect to identity, belonging, and classroom/community practices.
-      </p>
-
-      <div class="grid-2" style="margin-top:14px">
-        <div class="card">
-          <h3>Learning names</h3>
-          <p>[Placeholder content] Ask, repeat back, confirm, and invite correction without making it a burden.</p>
-        </div>
-        <div class="card">
-          <h3>Sharing your name</h3>
-          <p>[Placeholder content] Offer a phonetic breakdown, a cue (rhymes with/like), and where you place emphasis.</p>
-        </div>
-      </div>
+      <h2 id="why-title" data-md="WHY_HEADING" data-md-mode="text">Why names matter</h2>
+      <div id="whyBody" class="md" data-md="WHY_BODY"></div>
     </section>
 
     <section class="section" id="tool" aria-labelledby="tool-title">
@@ -104,6 +91,21 @@
           </div>
         </aside>
       </div>
+    </section>
+
+    <section class="section" id="learning" aria-labelledby="learning-title">
+      <h2 id="learning-title" data-md="LEARNING_HEADING" data-md-mode="text">Learning names</h2>
+      <div id="learningBody" class="md" data-md="LEARNING_BODY"></div>
+    </section>
+
+    <section class="section" id="sharing" aria-labelledby="sharing-title">
+      <h2 id="sharing-title" data-md="SHARING_HEADING" data-md-mode="text">Sharing your name</h2>
+      <div id="sharingBody" class="md" data-md="SHARING_BODY"></div>
+    </section>
+
+    <section class="section" id="barriers" aria-labelledby="barriers-title">
+      <h2 id="barriers-title" data-md="BARRIERS_HEADING" data-md-mode="text">Barriers and bridges</h2>
+      <div id="barriersBody" class="md" data-md="BARRIERS_BODY"></div>
     </section>
 
     <section class="section" id="videos" aria-labelledby="videos-title">
@@ -208,6 +210,9 @@
         </p>
         <p style="margin:10px 0 0;color:rgba(11,47,63,.84)">
           Update the tool URL by changing <code>data-tool-url</code> on the <code>&lt;html&gt;</code> tag (top of this file).
+        </p>
+        <p style="margin:10px 0 0;color:rgba(11,47,63,.84)">
+          Update page copy by editing <code>content.md</code>. The page loads it automatically.
         </p>
       </div>
     </section>
