@@ -1,88 +1,195 @@
 <!doctype html>
-<html lang="en" data-tool-url="https://t00763781.github.io/TRU-Name-Pronouncer/embed.html" data-content-md="content.md">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TRU — Name Inclusion (POC)</title>
-  <meta name="description" content="TRU Name Inclusion: learn and share names respectfully, plus a pronunciation helper." />
+  <title>TRU — Diversity &amp; Equity (Tab Mock)</title>
+  <meta name="description" content="GitHub-hosted mock of TRU Diversity & Equity page with Name Inclusion tab content." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <div class="utilbar" role="navigation" aria-label="Utility">
-    <div class="container utilbar-inner">
-      <a href="#" class="util-link">myTRU</a>
-      <a href="#" class="util-link">Moodle</a>
-      <a href="#" class="util-link">Library</a>
-      <a href="#" class="util-link">Careers</a>
-      <a href="#" class="util-link">News &amp; Events</a>
-      <a href="#" class="util-link">Athletics</a>
-      <a href="#" class="util-link">Williams Lake</a>
-      <a href="#" class="util-link">About</a>
-      <a href="#" class="util-link">Contact</a>
-      <a href="#" class="util-link">Giving</a>
-      <button class="util-search" type="button" aria-label="Search (placeholder)">Search</button>
+  <div class="utility">
+    <div class="wrap utility-inner">
+      <div class="u-links">
+        <a href="#" aria-disabled="true">myTRU</a>
+        <a href="#" aria-disabled="true">Moodle</a>
+        <a href="#" aria-disabled="true">Library</a>
+        <a href="#" aria-disabled="true">Careers</a>
+        <a href="#" aria-disabled="true">News &amp; Events</a>
+        <a href="#" aria-disabled="true">Athletics</a>
+      </div>
+      <div class="u-actions">
+        <a href="#" aria-disabled="true">Contact us</a>
+        <a class="pill" href="#" aria-disabled="true">APPLY</a>
+        <a class="pill ghost" href="#" aria-disabled="true">VISIT</a>
+        <a class="pill ghost" href="#" aria-disabled="true">GIVE</a>
+      </div>
     </div>
   </div>
 
-  <header class="masthead">
-    <div class="container masthead-inner">
-      <a class="logo" href="#" aria-label="TRU home">
-        <img src="assets/icons/tru-mark.svg" alt="TRU" />
-      </a>
-
-      <nav class="mainnav" aria-label="Main">
-        <a href="#" class="nav-item">Programs</a>
-        <a href="#" class="nav-item">Future Students</a>
-        <a href="#" class="nav-item">Current Students</a>
-        <a href="#" class="nav-item">Online Learning</a>
-        <a href="#" class="nav-item">Indigenous</a>
-        <a href="#" class="nav-item">International</a>
-        <a href="#" class="nav-item">Research</a>
-      </nav>
-
-      <div class="cta">
-        <a class="btn btn-cta" href="#">Apply</a>
-        <a class="btn btn-ghost" href="#">Visit</a>
-        <a class="btn btn-ghost" href="#">Give</a>
+  <header class="mast">
+    <div class="wrap mast-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brandtext">
+          <div class="brandname">Thompson Rivers University</div>
+          <div class="brandsub">Faculty of Student Development</div>
+        </div>
       </div>
+      <nav class="mainnav" aria-label="Main">
+        <a href="#" aria-disabled="true">Programs</a>
+        <a href="#" aria-disabled="true">Future Students</a>
+        <a href="#" aria-disabled="true">Current Students</a>
+        <a href="#" aria-disabled="true">Online Learning</a>
+        <a href="#" aria-disabled="true">Indigenous</a>
+        <a href="#" aria-disabled="true">International</a>
+        <a href="#" aria-disabled="true">Research</a>
+      </nav>
     </div>
   </header>
 
-  <section class="banner" aria-label="Banner">
-    <div class="banner-media" role="img" aria-label="TRU campus banner image"></div>
-    <div class="container banner-inner">
-      <div class="banner-card">
-        <h1 data-md="HERO_HEADING" data-md-mode="text">Name Inclusion</h1>
-        <div class="banner-body md" data-md="HERO_BODY"><p>Loading content…</p></div>
-      </div>
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Diversity and Equity</h1>
+      <p class="hero-sub">GitHub mock: preview of adding <strong>Name inclusion</strong> as a third tab panel (#tab-content-3).</p>
     </div>
   </section>
 
-  <main id="main" class="container content">
-    <section class="section" id="why">
-      <h2 data-md="WHY_HEADING" data-md-mode="text">Why names matter</h2>
-      <div class="md" data-md="WHY_BODY"></div>
-    </section>
+  <main id="main" class="wrap content">
+    <div class="tabs">
+      <div class="tablist" role="tablist" aria-label="Diversity and Equity tabs">
+        <button class="tab" role="tab" id="tab-1" aria-controls="tab-content-1" aria-selected="true">Inclusive and Accessible Spaces</button>
+        <button class="tab" role="tab" id="tab-2" aria-controls="tab-content-2" aria-selected="false">Anti-Racism Resources</button>
+        <button class="tab" role="tab" id="tab-3" aria-controls="tab-content-3" aria-selected="false">Name inclusion</button>
+      </div>
 
-    <section class="section" id="tool" aria-labelledby="tool-title">
-      <h2 id="tool-title">Pronunciation helper</h2>
-      <p class="sub">
-        Use the helper as a <strong>starting point</strong>. Adjust it to match preference. When in doubt, ask the person — they’re the source of truth.
-      </p>
+      <section class="panel" role="tabpanel" id="tab-content-1" aria-labelledby="tab-1">
+        <p class="lead">Placeholder panel. (Real content lives on tru.ca.)</p>
+        <div class="accord">
+          <details open><summary><span class="plus">+</span> Ablution Stations</summary><div class="body"><p>[Placeholder]</p></div></details>
+          <details><summary><span class="plus">+</span> Accessible Washrooms</summary><div class="body"><p>[Placeholder]</p></div></details>
+          <details><summary><span class="plus">+</span> All Gender Washrooms</summary><div class="body"><p>[Placeholder]</p></div></details>
+        </div>
+      </section>
 
-      <div class="tool-grid">
-        <div class="embed-card">
-          <iframe id="toolFrame" class="embed" src="" title="Name pronunciation helper" loading="lazy" allow="clipboard-write"></iframe>
-          <div class="fallback">
-            Trouble loading the helper? <a data-tool-link href="#" target="_blank" rel="noopener">Open it in a new tab</a>.
+      <section class="panel" role="tabpanel" id="tab-content-2" aria-labelledby="tab-2" hidden>
+        <p class="lead">Placeholder panel. (Real content lives on tru.ca.)</p>
+        <div class="accord">
+          <details open><summary><span class="plus">+</span> Websites</summary><div class="body"><p>[Placeholder]</p></div></details>
+          <details><summary><span class="plus">+</span> Videos</summary><div class="body"><p>[Placeholder]</p></div></details>
+          <details><summary><span class="plus">+</span> Podcasts</summary><div class="body"><p>[Placeholder]</p></div></details>
+        </div>
+      </section>
+
+      <section class="panel" role="tabpanel" id="tab-content-3" aria-labelledby="tab-3" hidden>
+        <!-- TRU Name Inclusion Project — Tab panel content (for #tab-content-3)
+     Paste this inside the NEW tab panel container on:
+     https://www.tru.ca/student-development/diversity-and-equity.html
+     (TRU team can duplicate an existing panel, set id="tab-content-3", then paste this.)
+
+     Notes:
+     - No external JS required (CMS-safe).
+     - Uses <details>/<summary> accordions to match the expandable + lists used on the page.
+     - Replace banner image URL after uploading to TRU media library.
+     - Replace video placeholders with TRU-hosted embed codes or MP4 URLs.
+-->
+
+<style>
+/* Scoped styles only — avoids fighting tru.ca */
+.tru-ni{--ni-teal:#00aeb5;--ni-navy:#003e51;--ni-ink:#0b2f3f;--ni-muted:rgba(11,47,63,.75);--ni-border:rgba(0,0,0,.14);}
+.tru-ni *{box-sizing:border-box}
+.tru-ni{color:var(--ni-ink)}
+.tru-ni .ni-wrap{max-width:980px;margin:0 auto;padding:8px 0 18px}
+.tru-ni .ni-banner{position:relative;border-radius:10px;overflow:hidden;background:#0b2f3f}
+.tru-ni .ni-banner img{width:100%;height:260px;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.05)}
+.tru-ni .ni-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,62,81,.88) 0%,rgba(0,62,81,.50) 55%,rgba(0,62,81,.15) 100%)}
+.tru-ni .ni-hero{position:absolute;inset:0;display:flex;align-items:center;padding:18px}
+.tru-ni .ni-hero-card{position:relative;z-index:2;max-width:760px;color:#fff}
+.tru-ni .ni-hero-card h2{margin:0;font-size:34px;line-height:1.1;font-weight:800;letter-spacing:.2px}
+.tru-ni .ni-hero-card p{margin:10px 0 0;font-size:15px;color:rgba(255,255,255,.92);max-width:72ch}
+.tru-ni .ni-pillrow{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+.tru-ni .ni-pill{display:inline-block;border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.94);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;background:rgba(0,0,0,.08)}
+.tru-ni .ni-section{margin-top:18px}
+.tru-ni .ni-section h3{margin:0 0 8px;font-size:22px;font-weight:800}
+.tru-ni .ni-lead{margin:0;color:var(--ni-muted);max-width:92ch}
+.tru-ni .ni-grid{margin-top:14px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:start}
+.tru-ni .ni-card{border:1px solid var(--ni-border);border-radius:10px;background:#fff;padding:14px}
+.tru-ni .ni-card h4{margin:0 0 8px;font-size:16px;font-weight:800}
+.tru-ni .ni-embed{width:100%;border:0;border-radius:10px;height:860px;background:#fff}
+.tru-ni .ni-aside{display:grid;gap:10px}
+.tru-ni .ni-asidebox{background:var(--ni-navy);color:rgba(255,255,255,.92);border-radius:10px;padding:12px}
+.tru-ni .ni-asidebox h4{margin:0 0 8px;font-size:14px;font-weight:800;color:#fff}
+.tru-ni .ni-asidebox ol{margin:0;padding-left:18px;font-size:13px;color:rgba(255,255,255,.90)}
+.tru-ni .ni-asidebox p{margin:0;font-size:13px;color:rgba(255,255,255,.88)}
+
+.tru-ni details{border-top:1px solid rgba(0,0,0,.18);padding:10px 0}
+.tru-ni details:first-of-type{border-top:0}
+.tru-ni summary{cursor:pointer;font-weight:800;list-style:none;display:flex;align-items:center;gap:10px}
+.tru-ni summary::-webkit-details-marker{display:none}
+.tru-ni .ni-plus{width:18px;height:18px;border:1px solid rgba(0,0,0,.20);border-radius:4px;display:grid;place-items:center;font-weight:900;color:rgba(11,47,63,.70)}
+.tru-ni details[open] .ni-plus{background:rgba(0,174,181,.12);border-color:rgba(0,174,181,.30);color:rgba(0,62,81,.92)}
+.tru-ni .ni-body{margin-top:10px}
+.tru-ni .ni-body p{margin:10px 0 0;line-height:1.55}
+.tru-ni .ni-body p:first-child{margin-top:0}
+.tru-ni .ni-body ul,.tru-ni .ni-body ol{margin:10px 0 0;padding-left:20px}
+.tru-ni .ni-body li{margin:6px 0}
+.tru-ni .ni-body code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;background:rgba(0,174,181,.08);border:1px solid rgba(0,0,0,.10);padding:.1em .35em;border-radius:6px}
+
+.tru-ni .ni-video-grid{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tru-ni .ni-video{width:100%;aspect-ratio:16/9;border-radius:10px;background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.12);display:grid;place-items:center;color:rgba(11,47,63,.70);font-weight:700}
+.tru-ni .ni-carousel{margin-top:12px;display:flex;gap:12px;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.tru-ni .ni-slide{min-width:min(340px,88vw);scroll-snap-align:start;border:1px solid rgba(0,0,0,.14);border-radius:10px;padding:12px;background:#fff}
+.tru-ni .ni-slide h5{margin:0 0 8px;font-size:14px;font-weight:800}
+.tru-ni .ni-small{margin-top:8px;font-size:13px;color:rgba(11,47,63,.74)}
+@media (max-width:980px){
+  .tru-ni .ni-grid{grid-template-columns:1fr}
+  .tru-ni .ni-video-grid{grid-template-columns:1fr}
+  .tru-ni .ni-banner img{height:220px}
+}
+</style>
+
+<section class="tru-ni" aria-label="Name Inclusion">
+  <div class="ni-wrap">
+
+    <div class="ni-banner">
+      <!-- Replace the src with a TRU media URL once uploaded in ACM CMS -->
+      <img src="assets/51602362562_90934ba714_o.jpg" alt="TRU campus photo banner" />
+      <div class="ni-hero">
+        <div class="ni-hero-card">
+          <h2>Name inclusion</h2>
+          <p>Learning and using someone’s name the way they prefer is a practical, everyday way to show respect. This tab includes guidance plus a pronunciation helper you can use as a starting point.</p>
+          <div class="ni-pillrow">
+            <span class="ni-pill">Curiosity over guessing</span>
+            <span class="ni-pill">Practice over performance</span>
+            <span class="ni-pill">Consent over convenience</span>
+            <span class="ni-pill">Repair over embarrassment</span>
           </div>
         </div>
+      </div>
+    </div>
 
-        <aside class="aside" aria-label="Guidance">
-          <div class="aside-box">
-            <h3>How to learn a name</h3>
+    <div class="ni-section">
+      <h3>Pronunciation helper</h3>
+      <p class="ni-lead"><strong>Starting point only:</strong> adjust to match the person’s preference. When in doubt, ask the person — they’re the source of truth.</p>
+
+      <div class="ni-grid">
+        <div class="ni-card">
+          <iframe class="ni-embed"
+            src="https://t00763781.github.io/TRU-Name-Pronouncer/embed.html"
+            title="Name pronunciation helper"
+            loading="lazy"
+            allow="clipboard-write"></iframe>
+          <p class="ni-small">Trouble loading? <a href="https://t00763781.github.io/TRU-Name-Pronouncer/" target="_blank" rel="noopener">Open the helper in a new tab</a>.</p>
+        </div>
+
+        <aside class="ni-aside" aria-label="Guidance">
+          <div class="ni-asidebox">
+            <h4>How to learn a name</h4>
             <ol>
               <li>Ask: “Could you help me pronounce your name the way you prefer?”</li>
               <li>Repeat it back and confirm.</li>
@@ -90,8 +197,9 @@
               <li>If you miss it: brief apology, correct, continue.</li>
             </ol>
           </div>
-          <div class="aside-box">
-            <h3>How to teach your name</h3>
+
+          <div class="ni-asidebox">
+            <h4>How to teach your name</h4>
             <ol>
               <li>Say it slowly, then at normal speed.</li>
               <li>Share a syllable breakdown.</li>
@@ -99,127 +207,83 @@
               <li>Invite correction.</li>
             </ol>
           </div>
-          <div class="aside-box">
-            <h3>Privacy</h3>
+
+          <div class="ni-asidebox">
+            <h4>Privacy</h4>
             <p>Runs in your browser — nothing is uploaded.</p>
           </div>
         </aside>
       </div>
-    </section>
+    </div>
 
-    <section class="section" id="learning">
-      <h2 data-md="LEARNING_HEADING" data-md-mode="text">Learning names</h2>
-      <div class="md" data-md="LEARNING_BODY"></div>
-    </section>
+    <div class="ni-section" aria-label="Guidance and resources">
 
-    <section class="section" id="sharing">
-      <h2 data-md="SHARING_HEADING" data-md-mode="text">Sharing your name</h2>
-      <div class="md" data-md="SHARING_BODY"></div>
-    </section>
+      <details open>
+        <summary><span class="ni-plus">+</span> HERO</summary>
+        <div class="ni-body"><p>(Add HERO copy here.)</p></div>
+      </details>
 
-    <section class="section" id="barriers">
-      <h2 data-md="BARRIERS_HEADING" data-md-mode="text">Barriers and bridges</h2>
-      <div class="md" data-md="BARRIERS_BODY"></div>
-    </section>
+      <details>
+        <summary><span class="ni-plus">+</span> WHY NAMES MATTER</summary>
+        <div class="ni-body"><p>(Add WHY NAMES MATTER copy here.)</p></div>
+      </details>
 
-    <section class="section" id="videos">
-      <h2>Two short “how-to” videos</h2>
-      <p class="sub">Replace placeholder files in <code>/assets/videos</code> when ready.</p>
+      <details>
+        <summary><span class="ni-plus">+</span> LEARNING NAMES</summary>
+        <div class="ni-body"><p>(Add LEARNING NAMES copy here.)</p></div>
+      </details>
 
-      <div class="video-grid">
-        <div class="video-card">
-          <h3>How to learn a name</h3>
-          <video class="video" controls preload="none" poster="assets/posters/how-to-learn-a-name.svg">
-            <source src="assets/videos/how-to-learn-a-name.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="video-card">
-          <h3>How to teach your name</h3>
-          <video class="video" controls preload="none" poster="assets/posters/how-to-teach-your-name.svg">
-            <source src="assets/videos/how-to-teach-your-name.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-    </section>
+      <details>
+        <summary><span class="ni-plus">+</span> SHARING YOUR NAME</summary>
+        <div class="ni-body"><p>(Add SHARING YOUR NAME copy here.)</p></div>
+      </details>
 
-    <section class="section" id="stories">
-      <div class="carousel-shell">
-        <div class="carousel-head">
-          <div>
-            <h2 style="margin:0 0 6px">Stories: why names matter</h2>
-            <p class="sub">5 short videos from students and staff (placeholders for now).</p>
-          </div>
-          <div class="carousel-actions">
-            <button id="prevBtn" class="cbtn ghost" type="button" aria-label="Previous videos">←</button>
-            <button id="nextBtn" class="cbtn" type="button" aria-label="Next videos">→</button>
-          </div>
+      <details>
+        <summary><span class="ni-plus">+</span> BARRIERS AND BRIDGES</summary>
+        <div class="ni-body"><p>(Add BARRIERS AND BRIDGES copy here.)</p></div>
+      </details>
+
+    </div>
+
+    <div class="ni-section" aria-label="Videos">
+      <h3>Videos</h3>
+      <p class="ni-lead">Space for two horizontal videos (how to learn a name, how to teach your name), and a carousel of five short stories. Replace placeholders with TRU-hosted video embeds or MP4 URLs.</p>
+
+      <div class="ni-video-grid">
+        <div class="ni-card">
+          <h4>How to learn a name</h4>
+          <div class="ni-video">Video placeholder (16:9)</div>
+          <p class="ni-small"><strong>Replace:</strong> paste a TRU-approved embed code or MP4 URL.</p>
         </div>
 
-        <div id="carousel" class="carousel" aria-label="Video carousel">
-          
-          <article class="slide">
-            <h4>Story 1</h4>
-            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-01.svg">
-              <source src="assets/videos/why-names-matter-01.mp4" type="video/mp4" />
-            </video>
-          </article>
-          <article class="slide">
-            <h4>Story 2</h4>
-            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-02.svg">
-              <source src="assets/videos/why-names-matter-02.mp4" type="video/mp4" />
-            </video>
-          </article>
-          <article class="slide">
-            <h4>Story 3</h4>
-            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-03.svg">
-              <source src="assets/videos/why-names-matter-03.mp4" type="video/mp4" />
-            </video>
-          </article>
-          <article class="slide">
-            <h4>Story 4</h4>
-            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-04.svg">
-              <source src="assets/videos/why-names-matter-04.mp4" type="video/mp4" />
-            </video>
-          </article>
-          <article class="slide">
-            <h4>Story 5</h4>
-            <video class="video" controls preload="none" poster="assets/posters/why-names-matter-05.svg">
-              <source src="assets/videos/why-names-matter-05.mp4" type="video/mp4" />
-            </video>
-          </article>
+        <div class="ni-card">
+          <h4>How to teach your name</h4>
+          <div class="ni-video">Video placeholder (16:9)</div>
+          <p class="ni-small"><strong>Replace:</strong> paste a TRU-approved embed code or MP4 URL.</p>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="faq">
-      <h2>FAQ</h2>
-      <div class="qa">
-        <div class="q">Why not just guess?</div>
-        <div class="a">Because names are personal. Use tools as starting points, then ask and confirm.</div>
-      </div>
-      <div class="qa">
-        <div class="q">Does this tool store my name?</div>
-        <div class="a">No — this POC runs in the browser. Nothing is uploaded.</div>
-      </div>
-    </section>
-  </main>
+      <div class="ni-section">
+        <h3>Stories: why names matter</h3>
+        <p class="ni-lead">Carousel of five short student/staff videos.</p>
 
-  <footer class="foot">
-    <div class="container">
-      <div class="foot-grid">
-        <div>
-          <div class="foot-mark">FIND YOUR TRU</div>
-          <div class="foot-small">TRU Name Inclusion Project (POC)</div>
-        </div>
-        <div class="foot-links">
-          <a href="#">Terms &amp; Privacy</a>
-          <a href="#">Accessibility Feedback</a>
-          <a href="#">Emergency Info</a>
+        <div class="ni-carousel" aria-label="Stories carousel">
+          <div class="ni-slide"><h5>Story 1</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div><div class="ni-slide"><h5>Story 2</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div><div class="ni-slide"><h5>Story 3</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div><div class="ni-slide"><h5>Story 4</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div><div class="ni-slide"><h5>Story 5</h5><div class="ni-video">Video placeholder</div><div class="ni-small">Replace with embed or MP4 URL.</div></div>
         </div>
       </div>
     </div>
-  </footer>
 
-  <script src="site.js"></script>
+  </div>
+</section>
+
+      </section>
+    </div>
+
+    <footer class="foot">
+      <p><strong>Tip:</strong> open <code>#tab-content-3</code> to deep-link to this tab.</p>
+    </footer>
+  </main>
+
+  <script src="tabs.js"></script>
 </body>
 </html>
