@@ -22,3 +22,7 @@ Edit `content.md` (key format). The page loads it automatically via `ni.js`.
 ## Deploy
 Push to GitHub, then GitHub → Settings → Pages → Deploy from branch (`main` / root).
 Open: `/#tab-content-3`
+
+
+## Tab-1: Campus map
+Tab 1 embeds TRU’s campus map via iframe (https://www.tru.ca/__shared/map.html) with a fallback link.
